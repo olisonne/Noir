@@ -184,69 +184,72 @@ void UNAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackD
 void UNAttributeSet::PostAttributeChange(const FGameplayAttribute& Attribute, float OldValue, float NewValue)
 {
 	Super::PostAttributeChange(Attribute, OldValue, NewValue);
+
+	if (!AttributesViewModel) return;
+
 	if (Attribute == GetHealthAttribute())
 	{
-		if (AttributesViewModel) AttributesViewModel->VitalAttributesViewModel->SetHealth(NewValue);
+		 AttributesViewModel->VitalAttributesViewModel->SetHealth(NewValue);
 	}
 	else if(Attribute == GetMaxHealthAttribute())
 	{
-		if (AttributesViewModel) AttributesViewModel->VitalAttributesViewModel->SetMaxHealth(NewValue);
+		AttributesViewModel->VitalAttributesViewModel->SetMaxHealth(NewValue);
 	}
 	else if(Attribute == GetManaAttribute())
 	{
-		if (AttributesViewModel) AttributesViewModel->VitalAttributesViewModel->SetMana(NewValue);
+		AttributesViewModel->VitalAttributesViewModel->SetMana(NewValue);
 	}
 	else if(Attribute == GetMaxManaAttribute())
 	{
-		if (AttributesViewModel) AttributesViewModel->VitalAttributesViewModel->SetMaxMana(NewValue);
+		AttributesViewModel->VitalAttributesViewModel->SetMaxMana(NewValue);
 	}
 	else if(Attribute == GetStrengthAttribute())
 	{
-		if (AttributesViewModel) AttributesViewModel->PrimaryAttributesViewModel->SetStrength(NewValue);
+		AttributesViewModel->PrimaryAttributesViewModel->SetStrength(NewValue);
 	}
 	else if (Attribute == GetIntelligenceAttribute())
 	{
-		if (AttributesViewModel) AttributesViewModel->PrimaryAttributesViewModel->SetIntelligence(NewValue);
+		AttributesViewModel->PrimaryAttributesViewModel->SetIntelligence(NewValue);
 	}
 	else if (Attribute == GetResilienceAttribute())
 	{
-		if (AttributesViewModel) AttributesViewModel->PrimaryAttributesViewModel->SetResilience(NewValue);
+		AttributesViewModel->PrimaryAttributesViewModel->SetResilience(NewValue);
 	}
 	else if (Attribute == GetVigorAttribute())
 	{
-		if (AttributesViewModel) AttributesViewModel->PrimaryAttributesViewModel->SetVigor(NewValue);
+		AttributesViewModel->PrimaryAttributesViewModel->SetVigor(NewValue);
 	}
 	else if (Attribute == GetArmorAttribute())
 	{
-		if (AttributesViewModel) AttributesViewModel->SecondaryAttributesViewModel->SetArmor(NewValue);
+		AttributesViewModel->SecondaryAttributesViewModel->SetArmor(NewValue);
 	}
 	else if (Attribute == GetArmorPenetrationAttribute())
 	{
-		if (AttributesViewModel) AttributesViewModel->SecondaryAttributesViewModel->SetArmorPenetration(NewValue);
+		AttributesViewModel->SecondaryAttributesViewModel->SetArmorPenetration(NewValue);
 	}
 	else if (Attribute == GetBlockChanceAttribute())
 	{
-		if (AttributesViewModel) AttributesViewModel->SecondaryAttributesViewModel->SetBlockChance(NewValue);
+		AttributesViewModel->SecondaryAttributesViewModel->SetBlockChance(NewValue);
 	}
 	else if (Attribute == GetCriticalHitChanceAttribute())
 	{
-		if (AttributesViewModel) AttributesViewModel->SecondaryAttributesViewModel->SetCriticalHitChance(NewValue);
+		AttributesViewModel->SecondaryAttributesViewModel->SetCriticalHitChance(NewValue);
 	}
 	else if (Attribute == GetCriticalHitDamageAttribute())
 	{
-		if (AttributesViewModel) AttributesViewModel->SecondaryAttributesViewModel->SetCriticalHitDamage(NewValue);
+		AttributesViewModel->SecondaryAttributesViewModel->SetCriticalHitDamage(NewValue);
 	}
 	else if (Attribute == GetCriticalHitResistanceAttribute())
 	{
-		if (AttributesViewModel) AttributesViewModel->SecondaryAttributesViewModel->SetCriticalHitResistance(NewValue);
+		AttributesViewModel->SecondaryAttributesViewModel->SetCriticalHitResistance(NewValue);
 	}
 	else if (Attribute == GetHealthRegenerationAttribute())
 	{
-		if (AttributesViewModel) AttributesViewModel->SecondaryAttributesViewModel->SetHealthRegeneration(NewValue);
+		AttributesViewModel->SecondaryAttributesViewModel->SetHealthRegeneration(NewValue);
 	}
 	else if (Attribute == GetManaRegenerationAttribute())
 	{
-		if (AttributesViewModel) AttributesViewModel->SecondaryAttributesViewModel->SetManaRegeneration(NewValue);
+		AttributesViewModel->SecondaryAttributesViewModel->SetManaRegeneration(NewValue);
 	}
 }
 
